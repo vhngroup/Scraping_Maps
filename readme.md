@@ -37,6 +37,6 @@ python main.py
 ![guardamos](https://github.com/vhngroup/Scraping_Maps/blob/main/static/maps_3.png)|
 
 
-|   	|   	|   	|
+|   Listamos 	|  analizamos  	|   guardamos en csv 	|
 |:-:	|---	|---	|
-|   	|   	|   	|
+|![listamos](https://github.com/vhngroup/Scraping_Maps/blob/main/static/maps_1.png)   	|[analizamos](https://github.com/vhngroup/Scraping_Maps/blob/main/static/maps_2.png)   	|[guardamos](https://github.com/vhngroup/Scraping_Maps/blob/main/static/maps_3.png)|   	|
