@@ -78,7 +78,7 @@ class Scraping_Maps:
                 pass
             time.sleep(5)
         elements = driver.find_elements(By.CSS_SELECTOR, "div[role='feed']>div>div[jsaction]:not([aria-label])") #Excluimos un area
-        driver.execute_script("return arguments[0].scrollIntoView(true);", first_position)
+        driver.execute_script("return arguments[0].scrollIntoView(true);", first_position) #Acemos scroll a primer lugar
         time.sleep(4)
         for element in elements:
             element.click()
@@ -95,22 +95,22 @@ class Scraping_Maps:
                 calificacion = new_card.find_element(By.CSS_SELECTOR, "div[jslog]>span>span[aria-hidden]").text
                 calificacion = re.sub(r"[^a-zA-Z0-9/#':.-]", " ", calificacion)
             except NoSuchElementException:
-                calificacion = 0
+                calificacion = "No indicado"
             try:
                 direccion = new_card.find_element(By.CSS_SELECTOR, "button[data-item-id='address']").text
                 direccion = re.sub(r"[^a-zA-Z0-9/#':.-]", " ", direccion)
             except NoSuchElementException:
-                direccion=0
+                direccion="No indicado"
             try:
                 telefono = new_card.find_element(By.CSS_SELECTOR, "button[data-item-id*='phone']").text
                 telefono = re.sub(r"[^a-zA-Z0-9/#':.-]", " ", telefono)
             except NoSuchElementException:
-                telefono=0
+                telefono="No indicado"
             try:
-                valor_estimado = new_card.find_element(By.CSS_SELECTOR, "div[jsaction][jsname]>div").text
+                valor_estimado = new_card.find_element(By.CSS_SELECTOR, "div[jsaction][jsname][aria-controls]>div").text
                 valor_estimado = re.sub(r"[^a-zA-Z0-9/#':.-]", " ", valor_estimado)
             except NoSuchElementException:
-                valor_estimado=0
+                valor_estimado="No indicado"
             try:
                 url = new_card.find_element(By.CSS_SELECTOR, "a[jsaction][data-item-id]").get_attribute('href')
             except NoSuchElementException:
